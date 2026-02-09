@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:15
+    container_name: postgres_da
+    restart: always
+    environment:
+      POSTGRES_USER: da_user
+      POSTGRES_PASSWORD: da_pass
+      POSTGRES_DB: da_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+volumes:
+  pg_data:
